@@ -22,7 +22,7 @@
                     <p>The motto or explanition</p>
                 </div>
             </header>
-            <div class="main-menu pure-g">
+            <div class="main-menu pure-g" id="menu_j">
                 <ul>
                     <li class="pure-u-1"><a href="#About">About</a></li>
                     <li class="pure-u-1"><a href="#Experience">Experience</a></li>
@@ -33,11 +33,13 @@
                 </ul>
             </div>
             <a href="" class="icon menu">
-                <div class="imadeicon">
+                <input type="radio" id="barstatus" class="barstatus none" name="barstatus">
+                <div class="imadeicon status">
                     <div class="bar-item"></div>
                     <div class="bar-item"></div>
                     <div class="bar-item"></div>
                 </div>
+                <label for="barstatus" class="imadeicon" id="label-status"></label>
             </a>
         </div>
         <div class="content-side item">
@@ -48,8 +50,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- <div class="pure-g">
     <div class="pure-u-1"></div>
     <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
@@ -64,5 +64,20 @@
     <div class="pure-u-1 pure-u-md-1-4"></div>
 </div> -->
 </body>
+<script>
+(function() {
+    var barstatus = document.getElementById('barstatus');
+    var menu_j = document.getElementById('menu_j');
+    document.getElementById('label-status').addEventListener('click', function(event) {
+        if (barstatus.checked === true) {
+            event.preventDefault();
+            barstatus.checked = false;
+            
+        }
+    });
+
+
+})()
+</script>
 
 </html>
