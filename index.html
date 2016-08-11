@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Liloolee Front-End Developer,Programmer</title>
+    <title>Responsive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -44,9 +44,17 @@
         </div>
         <div class="content-side item">
             <div class="main-content">
-                <span>123123</span>
-                <span>123123</span>
-                <span>123123</span>
+                <form id="leave-comment" class="comment-form">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="5" cols="40"> </textarea>
+                    <label for="nickname">nickName:</label>
+                    <input type="text" name="nickname" id="nickname">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email">
+                    <label for="url">RUL:</label>
+                    <input type="text" name="url" id="url">
+                    <button id='submit-btn'>Submit</button>
+                </form>
             </div>
         </div>
     </div>
@@ -72,11 +80,40 @@
         if (barstatus.checked === true) {
             event.preventDefault();
             barstatus.checked = false;
-            
         }
     });
+    /* Let's get ajax party start */
+    var sendInfo = function(formId, phpFileName) {
+        function addURLParam(url, name, value) {
+            url += (url.indexOf('?') == -1 ? '?' : '&');
+            url += encodeURIComponent(name) + '=' + encodeURIComponent(value);
+            return url;
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    console.log(xhr.responseText);
+                    alert("accomplish");
+                } else {
+                    console.log('Reauest was unsuccessful: ' + xhr.status);
+                }
+            }
+        };
+        /* get 请求的每个参数的 名称和值 都需要用encodeURICompoent()编码 之间用& 分隔*/
+        xhr.open('post', phpFileName, true);
+        var form = document.getElementById(formId);
+        xhr.send(new FormData(form));
+    }
 
-
+    function handleSend() {
+        sendInfo('leave-comment', 'storemessage.php');
+    }
+    var btn = document.getElementById('submit-btn');
+    btn.addEventListener('click', function(event) {
+        event.preventDefault();
+        handleSend();
+    });
 })()
 </script>
 

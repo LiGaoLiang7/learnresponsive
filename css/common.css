@@ -17,7 +17,7 @@ body {
 }
 
 .main-box .menu-side {
-    background-color: #3ac1a4;
+    /*background-color: #3ac1a4;*/
     box-shadow: 0 0 6px #a4adab;
     color: #fff;
 }
@@ -95,6 +95,10 @@ body {
     width: 36% !important;
 }
 
+.comment-form > input,.comment-form > label,.comment-form > button,.comment-form > textarea{
+    display: block;
+    width: 100%;
+}
 
 /* small */
 
@@ -144,6 +148,7 @@ body {
         float: left;
         height: 100vh;
         width: 25%;
+        padding: 0 1em;
     }
     .main-box .content-side {
         width: 75%;
@@ -152,10 +157,9 @@ body {
         padding: 2% 4%;
     }
     .main-box .main-menu {
-        margin-top: 17%;
+        margin: 17% auto;
         padding: 0 1em;
         margin: 0 auto;
-        width: 18em;
     }
     .main-content {}
     .icon.menu {
@@ -163,7 +167,6 @@ body {
     }
     .side-header {
         margin: 5.5em auto;
-        width: 18em;
         color: #fff;
     }
 }
