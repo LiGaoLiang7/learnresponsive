@@ -14,11 +14,11 @@
 </head>
 
 <body>
-    <div class="page-content main-box">
+    <div class="page-content main-box cf">
         <div class="menu-side item">
             <header>
                 <div class="side-header">
-                    <h1>header title</h1>
+                    <h1>Header Title</h1>
                     <p>The motto or explanition</p>
                 </div>
             </header>
@@ -26,7 +26,7 @@
                 <ul>
                     <li class="pure-u-1"><a href="#About">About</a></li>
                     <li class="pure-u-1"><a href="#Experience">Experience</a></li>
-                    <li class="pure-u-1"><a href="#Works">Works</a></li>
+                    <li class="pure-u-1"><a href="#Works">Work</a></li>
                     <li class="pure-u-1"><a href="#Translate">Translate &amp; Share</a></li>
                     <li class="pure-u-1"><a href="#Skills">Skills</a></li>
                     <li class="pure-u-1"><a href="#Comments">Comments</a></li>
@@ -43,17 +43,23 @@
             </a>
         </div>
         <div class="content-side item">
+            <!-- <div class="main-content">
+                    <h1>About</h1>
+                </div>
+             -->
             <div class="main-content">
+                <h1>Leave a Comment</h1>
+                <p class="exp">Your email address will not be published</p>
                 <form id="leave-comment" class="comment-form">
-                    <label for="comment">Comment:</label>
-                    <textarea id="comment" name="comment" rows="5" cols="40"> </textarea>
-                    <label for="nickname">nickName:</label>
+                    <label for="comment">COMMENT*</label>
+                    <textarea id="comment" name="comment" rows="4" cols="40"> </textarea>
+                    <label for="nickname">NICKNAME</label>
                     <input type="text" name="nickname" id="nickname">
-                    <label for="email">Email:</label>
+                    <label for="email">EMAIL*</label>
                     <input type="text" name="email" id="email">
-                    <label for="url">RUL:</label>
-                    <input type="text" name="url" id="url">
-                    <button id='submit-btn'>Submit</button>
+                    <label for="url">WEBSITE</label>
+                    <input type="text" name="url" id="url" placeholder="http://">
+                    <button id='submit-btn'>POST COMMENT</button>
                 </form>
             </div>
         </div>
@@ -70,7 +76,8 @@
     </div>
     <div class="pure-u-1 pure-u-md-3-4"></div>
     <div class="pure-u-1 pure-u-md-1-4"></div>
-</div> -->
+</div> 
+-->
 </body>
 <script>
 (function() {
@@ -80,6 +87,12 @@
         if (barstatus.checked === true) {
             event.preventDefault();
             barstatus.checked = false;
+        }
+        console.log(menu_j.className);
+        if (menu_j.className.indexOf('stick-top') !== -1) {
+            menu_j.className = 'main-menu pure-g';
+        } else {
+            menu_j.className += ' stick-top';
         }
     });
     /* Let's get ajax party start */
@@ -94,13 +107,13 @@
             if (xhr.readyState === 4) {
                 if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
                     console.log(xhr.responseText);
-                    alert("accomplish");
+                    alert("accomplished");
+                    document.getElementById('submit-btn').disabled = true;
                 } else {
                     console.log('Reauest was unsuccessful: ' + xhr.status);
                 }
             }
         };
-        /* get 请求的每个参数的 名称和值 都需要用encodeURICompoent()编码 之间用& 分隔*/
         xhr.open('post', phpFileName, true);
         var form = document.getElementById(formId);
         xhr.send(new FormData(form));
