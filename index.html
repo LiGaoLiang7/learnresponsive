@@ -33,7 +33,7 @@
                 </ul>
             </div>
             <a href="" class="icon menu">
-                <input type="radio" id="barstatus" class="barstatus none" name="barstatus">
+                <input type="checkbox" id="barstatus" class="barstatus none" name="barstatus">
                 <div class="imadeicon status">
                     <div class="bar-item"></div>
                     <div class="bar-item"></div>
@@ -43,10 +43,62 @@
             </a>
         </div>
         <div class="content-side item">
-            <!-- <div class="main-content">
-                    <h1>About</h1>
+            <div class="main-content">
+                <h1>About</h1>
+                <div class="cf">
+                    <img src="./img/-text.png" alt="头像" class="avator fr">
+                    <p class="about textjf">That being said, it is a good thing to try to improve one's language and communication skills. Maybe we need to ask not how to emulate the native speakers but ask how to improve the language skills for specific purposes which you need to figure out based on your own situations. </p>
+                    <p class="about textjf">Overall, I think the bottom line is that we all need to do everything we can to improve our verbal skills that are essential for effective communication in our professional and personal life. There is no need to feel inferior about being a non-native speaker of English. Ultimately the quality of your English really depends on how educated and informed you are over the topics you are speaking or writing about.</p>
                 </div>
-             -->
+                <h1>Experience</h1>
+                <div class="cf">
+                    <p class="exper textjf">That being said, it is a good thing to try to improve one's language and communication skills. Maybe we need to ask not how to emulate the native speakers but ask how to improve the language skills for specific purposes which you need to figure out based on your own situations. </p>
+                    <p class="exper textjf">Overall, I think the bottom line is that we all need to do everything we can to improve our verbal skills that are essential for effective communication in our professional and personal life. There is no need to feel inferior about being a non-native speaker of English. Ultimately the quality of your English really depends on how educated and informed you are over the topics you are speaking or writing about.</p>
+                </div>
+                <h1>Works</h1>
+                <div class="cf pure-g my-works">
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <div class="work-item">
+                            <img src="./img/work.png" alt="" class="pure-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="main-content">
                 <h1>Leave a Comment</h1>
                 <p class="exp">Your email address will not be published</p>
@@ -64,30 +116,11 @@
             </div>
         </div>
     </div>
-    <!-- <div class="pure-g">
-    <div class="pure-u-1"></div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-    </div>
-    <div class="pure-u-1 pure-u-md-3-4"></div>
-    <div class="pure-u-1 pure-u-md-1-4"></div>
-</div> 
--->
 </body>
 <script>
 (function() {
-    var barstatus = document.getElementById('barstatus');
     var menu_j = document.getElementById('menu_j');
     document.getElementById('label-status').addEventListener('click', function(event) {
-        if (barstatus.checked === true) {
-            event.preventDefault();
-            barstatus.checked = false;
-        }
         console.log(menu_j.className);
         if (menu_j.className.indexOf('stick-top') !== -1) {
             menu_j.className = 'main-menu pure-g';
